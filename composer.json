@@ -1,0 +1,13 @@
+{
+  "name": "Cinema App",
+  "description": "A demo app to teach about ZF2 (ServiceManager)",
+  "keywords": [
+    "cinema",
+    "service manager",
+    "zf2"
+  ],
+  "require": {
+    "php": ">= 5.3.3",
+    "zendframework/zend-servicemanager": "2.4.*"
+  }
+}
