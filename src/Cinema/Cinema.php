@@ -13,8 +13,11 @@ class Cinema
 
   protected $boxOffice;
 
-  public function __construct()
+  protected $floors;
+
+  public function __construct($floors)
   {
+    $this->floors    = $floors;
     $this->theatres  = [
       '100' => new Theatre(30),
       '102' => new Theatre(35),
@@ -23,8 +26,8 @@ class Cinema
       '203' => new Theatre(35),
       '300' => new Theatre(40)
     ];
-    $showtimes       = new SplObjectStorage();
-    $bvs = new Film();
+    $showtimes = new SplObjectStorage();
+    $bvs       = new Film();
     $bvs->setTitle('Batman v Superman: Dawn of Justice')
         ->setStoryline("Fearing that the actions of Superman are left unchecked, Batman takes on the Man of Steel, while the world wrestles with what kind of a hero it really needs.")
         ->setGenres(['Action', 'Adventure', 'Fantasy'])
@@ -125,6 +128,11 @@ class Cinema
     return $this->boxOffice;
   }
 
+  public function getFloors()
+  {
+    return $this->floors;
+  }
+
   public function setTheatres(array $theatres)
   {
     $this->theatres = $theatres;
@@ -134,6 +142,12 @@ class Cinema
   public function setBoxOffice(BoxOffice $boxOffice)
   {
     $this->boxOffice = $boxOffice;
+    return $this;
+  }
+
+  public function setFloors($floors)
+  {
+    $this->floors = $floors;
     return $this;
   }
 }

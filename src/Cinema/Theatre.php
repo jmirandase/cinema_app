@@ -47,6 +47,12 @@ class Theatre
     return $this->capacity;
   }
 
+  public function setCapacity($capacity)
+  {
+    $this->capacity = $capacity;
+    return $this;
+  }
+
   public function setNumber($number)
   {
     $this->number = $number;
